@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+:root {
+  /* ---- Color tokens: technical drafting palette ---- */
+  --paper: #f0ede4;
+  --paper-raised: #e8e4d8;
+  --ink: #1b1b17;
+  --ink-soft: #2a2a24;
+  --graphite: #5c5a52;
+  --graphite-light: #8a877c;
+  --rule: #d3cdba;
+  --rule-strong: #b8b09a;
+  --signal: #ff4b1f;
+  --signal-dim: #ff4b1f1a;
+  --moss: #3f5e45;
+  --moss-dim: #3f5e451a;
+
+  /* ---- Type: system stacks (Google Fonts unreachable in this sandbox) ----
+     NOTE for deployment: swap these for next/font/google loading
+     Fraunces (display), Inter (body), and JetBrains Mono once deployed
+     somewhere with normal network access — see README. */
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, ui-serif, serif;
+  --font-body: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, ui-sans-serif, sans-serif;
+  --font-mono: "SF Mono", "Cascadia Code", "Fira Code", Consolas, Menlo, ui-monospace, monospace;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-graphite: var(--graphite);
+  --color-graphite-light: var(--graphite-light);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+  --color-signal: var(--signal);
+  --color-moss: var(--moss);
+
+  --font-serif: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  border-color: var(--rule);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+/* Hide native cursor only on fine-pointer devices once custom cursor mounts */
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+/* ---- Visible keyboard focus, always ---- */
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---- Selection ---- */
+::selection {
+  background: var(--signal);
+  color: var(--paper);
+}
+
+/* ---- Scrollbar (webkit) ---- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--rule-strong);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--graphite);
+}
+
+/* ---- Grain overlay ---- */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+}
+
+/* ---- Utility: hairline rule patterns ---- */
+.rule-top {
+  border-top: 1px solid var(--rule);
+}
+.rule-bottom {
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ---- Coordinate / mono diagnostic text ---- */
+.diagnostic {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite);
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Plus marks (drafting corner ticks) ---- */
+.corner-ticks {
+  position: relative;
+}
+.corner-ticks::before,
+.corner-ticks::after {
+  content: "+";
+  position: absolute;
+  font-family: var(--font-mono);
+  color: var(--rule-strong);
+  font-size: 0.875rem;
+  line-height: 1;
+}
+.corner-ticks::before {
+  top: -8px;
+  left: -8px;
+}
+.corner-ticks::after {
+  bottom: -8px;
+  right: -8px;
+}
