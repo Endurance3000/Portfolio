@@ -1,13 +1,13 @@
 export const profile = {
-  name: "Sanish Shrestha",
+  name: "Sanish Thapa Shrestha",
   firstName: "Sanish",
   location: "Bhaktapur, Nepal",
   role: "Computer Engineering Student",
-  institution: "Khwopa College of Engineering",
-  tagline: "I build things in layers — from the pixel up, and from the bit up.",
+  institution: "Khwopa Engineering College",
+  tagline: "I build things in layers from the pixel up, and from the bit up.",
   bio: [
-    "I'm a Computer Engineering student at Khwopa College of Engineering in Bhaktapur, Nepal, working through my fourth semester while building real, working software on the side — not assignments, actual projects with their own roadmaps.",
-    "My work splits into two registers that I keep coming back to. One is structured: full applications planned out in phases, like Canopy, a Django-based photo-sharing platform I'm building solo. The other is experimental: smaller systems where I get to play with the raw mechanics underneath — hand-tracked particle physics, bitwise data encoding, the kind of thing that doesn't ship a product but teaches you how the layer below actually works.",
+    "I'm a Computer Engineering student at Khwopa Engineering College in Bhaktapur, Nepal, working through my fourth semester while building real, working software on the side — not assignments, actual projects with their own roadmaps.",
+    "My work splits into two registers that I keep coming back to. One is structured: full applications planned out in phases, like Canopy, a Django-based photo-sharing platform I'm building solo. The other is experimental: smaller systems where I get to play with the raw mechanics underneath, hand-tracked particle physics, bitwise data encoding, the kind of thing that doesn't ship a product but teaches you how the layer below actually works.",
     "I'd rather understand both ends of the stack than specialize too early.",
   ],
   socials: {
