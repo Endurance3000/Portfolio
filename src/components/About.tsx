@@ -40,7 +40,7 @@ export default function About() {
             <dl className="space-y-4">
               <Fact term="Location" value={profile.location} />
               <Fact term="Institution" value={profile.institution} />
-              <Fact term="Currently" value="4th semester, Computer Engineering" />
+              <Fact term="Currently" value="Pursuing Computer Engineering" />
               <Fact term="Working in" value="Django, React, Three.js, C++" />
               <Fact term="Interested in" value="Where rendering, input, and data security meet" />
             </dl>
