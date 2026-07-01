@@ -32,21 +32,21 @@ const jetbrainsMono = JetBrains_Mono({ variable: "--font-mono", subsets: ["latin
 
 export const metadata: Metadata = {
 
-  title: "Sanish Shrestha — Computer Engineering Student",
+  title: "Sanish Thapa Shrestha — Computer Engineering Student",
 
   description:
 
-    "Sanish Shrestha is a Computer Engineering student at Khwopa College of Engineering, Bhaktapur, building web platforms with Django and React, and experimental systems spanning gesture-driven graphics to bitwise data encoding.",
+    "Sanish Thapa Shrestha is a Computer Engineering student at Khwopa Engineering College, Bhaktapur, building web platforms with Django and React, and experimental systems spanning gesture-driven graphics to bitwise data encoding.",
 
   metadataBase: new URL("https://sanishshrestha.dev"),
 
   openGraph: {
 
-    title: "Sanish Shrestha — Computer Engineering Student",
+    title: "Sanish Thapa Shrestha — Computer Engineering Student",
 
     description:
 
-      "Building structured platforms and experimental systems — from Django apps to gesture-driven particle fields.",
+      "Building structured platforms and experimental systems from Django apps to gesture driven particle fields.",
 
     type: "website",
 
