@@ -26,8 +26,7 @@ export default function Contact() {
         >
           <p className="diagnostic mb-6 text-signal">Contact</p>
           <h2 className="max-w-3xl font-serif text-4xl leading-[1.05] tracking-tight text-ink md:text-6xl">
-            Open to internships, collaborations, and conversations about anything
-            from Django to bit-shifting.
+            Open to internships, collaborations, and conversations about anything.
           </h2>
 
           <a
@@ -78,7 +77,7 @@ export default function Contact() {
         <p className="diagnostic text-graphite-light">
           {profile.name} — {profile.location}
         </p>
-        <p className="diagnostic text-graphite-light">© 2026 — Built with Next.js & Framer Motion</p>
+        <p className="diagnostic text-graphite-light">© 2026 — Built with Passion (also Next.js & Framer Motion)</p>
       </div>
     </section>
   );
