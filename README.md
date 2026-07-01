@@ -1,91 +1,216 @@
-# Sanish Shrestha — Developer Portfolio
+# Sanish Shrestha — Portfolio
 
-A Next.js 15+ production portfolio built on a single core principle: the platform itself demonstrates the engineering capabilities it describes. 
+A modern portfolio built with **Next.js**, designed around a simple philosophy:
 
-Instead of embedding static preview media, the hero section renders a live **topographic contour grid** that warps dynamically based on localized pointer tracking—acting as a direct architectural extension of the hardware-accelerated graphics and particle systems detailed throughout the platform.
+> **The portfolio itself should demonstrate the skills it represents.**
 
----
-
-## 🛠️ Tech Stack & Architecture
-
-*   **Framework:** Next.js (App Router, Static Export Archetype)
-*   **Compiler Engine:** Turbopack
-*   **Styling & Design Tokens:** Tailwind CSS, Custom CSS Variables
-*   **Animation & Interactivity:** Framer Motion / Canvas API
-*   **Deployment:** GitHub Pages Pipeline via automated GitHub Actions workflows
+Instead of using static visuals, the homepage features an interactive topographic contour field that dynamically responds to cursor movement. Inspired by my hand-tracked particle system project, it transforms an experimental concept into the site's primary visual identity.
 
 ---
 
-## 🏗️ Project Architecture & Directory Mapping
+## Preview
 
-```text
+**Live Website**
+
+https://www.sanishthapashrestha.com.np
+
+---
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- CSS Animations
+- GitHub Actions
+- GitHub Pages
+
+---
+
+## Features
+
+- Interactive hero section with a cursor-responsive contour field
+- Smooth animations and transitions
+- Fully responsive design
+- Custom-designed SVG social media icons
+- Structured content management through a single data file
+- Static export for GitHub Pages deployment
+- Automatic deployment using GitHub Actions
+
+---
+
+## Project Structure
+
+```
 src/
 ├── app/
-│   ├── layout.tsx         # Root layout, dynamic metadata bindings, global font context
-│   ├── page.tsx           # Monolithic viewport assembler
-│   └── globals.css        # Core tokens (fluid typography, hardware overlays, themes)
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+│
 ├── components/
-│   ├── ContourField.tsx   # Signatures warping grid canvas element (Hero background)
-│   ├── CustomCursor.tsx   # CAD-style absolute crosshair tracking system with vector readouts
-│   ├── GrainOverlay.tsx   # Static high-frequency film/paper grain emulation layer
-│   ├── Nav.tsx            # Context-aware sticky navigation boundary
-│   ├── Hero.tsx           # Context entry block
-│   ├── About.tsx          # Technical profile & biographical data matrix
-│   ├── Registers.tsx      # Multi-state architecture breakdown
-│   ├── Projects.tsx       # State-driven expandable project interface components
-│   ├── Contact.tsx        # Gateway boundaries & network configurations
+│   ├── About.tsx
+│   ├── Contact.tsx
+│   ├── ContourField.tsx
+│   ├── CustomCursor.tsx
+│   ├── GrainOverlay.tsx
+│   ├── Hero.tsx
+│   ├── Nav.tsx
+│   ├── Projects.tsx
+│   ├── Registers.tsx
 │   └── icons/
-│       └── BrandIcons.tsx # High-performance optimized inline SVG brand assets
+│       └── BrandIcons.tsx
+│
 └── data/
-    └── content.ts         # Centralized typed configuration matrix (Source of Truth)
+    └── content.ts
+```
 
-⚡ Development & Deployment
-Local Environment Setup
-Clone the repository and install the development dependencies:
+---
 
-Bash
+## Getting Started
+
+Install dependencies:
+
+```bash
 npm install
+```
+
+Start the development server:
+
+```bash
 npm run dev
-The local development server will initialize at http://localhost:3000.
+```
 
-Production Compilation & Optimization
-To execute strict type checking, compile the application, and run optimizing minification layers via Next.js and Turbopack:
+Open:
 
-Bash
+```
+http://localhost:3000
+```
+
+---
+
+## Production Build
+
+Build the project:
+
+```bash
 npm run build
+```
+
+Run the production server:
+
+```bash
 npm start
-Static Build Pipeline (GitHub Pages Deployment)
-The platform utilizes Next.js static asset generation via output: 'export' declared within next.config.ts. The repository includes a production-ready CI/CD pipeline situated at .github/workflows/deploy.yml.
+```
 
-To deploy changes to a custom apex domain or submodule domain:
+---
 
-Push your latest commits directly to your production branch:
+## Customizing Content
 
-Bash
+All personal information is stored in a single location:
+
+```
+src/data/content.ts
+```
+
+From there you can update:
+
+- Name
+- Biography
+- Project information
+- Social links
+- Technology stack
+- Contact details
+
+No component changes are required for normal content updates.
+
+---
+
+## Typography
+
+The original design uses the following Google Fonts:
+
+- Fraunces
+- Inter
+- JetBrains Mono
+
+The repository currently falls back to system fonts to ensure builds succeed in environments without external font access.
+
+To restore the intended typography, import the fonts in `src/app/layout.tsx` using `next/font/google` and attach the generated font variables to the `<html>` element.
+
+The existing CSS variables (`--font-display`, `--font-body`, and `--font-mono`) will automatically use the restored fonts without requiring additional styling changes.
+
+---
+
+## Deployment
+
+The project is configured for static export using:
+
+```ts
+output: "export"
+```
+
+making it compatible with **GitHub Pages**.
+
+Deployment is fully automated through **GitHub Actions**.
+
+After pushing to the `main` branch, GitHub Actions builds and deploys the latest version automatically.
+
+---
+
+## Custom Domain
+
+The repository includes a `public/CNAME` file for:
+
+```
+www.sanishthapashrestha.com.np
+```
+
+When using GitHub Pages, simply configure Pages to deploy from **GitHub Actions** and ensure the custom domain is enabled.
+
+---
+
+## Updating the Website
+
+Publishing updates only requires the standard Git workflow:
+
+```bash
 git add .
-git commit -m "feat: optimize rendering performance"
-git push origin main
-Navigate to your GitHub repository: Settings → Pages.
+git commit -m "Update portfolio"
+git push
+```
 
-Under Build and deployment → Source, ensure the target is set to GitHub Actions.
+The deployment pipeline automatically builds and publishes the latest version.
 
-The system automatically reads the public/CNAME bundle parameters to map builds seamlessly directly to www.sanishthapashrestha.com.np.
+---
 
-⚙️ Project Customization
-Content Updates
-To update your biographical profile, modify project schemas, adjust status parameters, or swap social anchors, edit the core data file directly. Do not modify component logic for text iterations:
+## Social Icons
 
-Bash
-nano src/data/content.ts
-Typography Configuration
-The configuration relies on variable web fonts (Fraunces, Inter, JetBrains Mono) bound directly onto the Document Object Model root via Next.js Optimization layers.
+Recent versions of `lucide-react` no longer include brand icons such as GitHub and LinkedIn.
 
-TypeScript
-// Configured inside src/app/layout.tsx
-const fraunces = Fraunces({
-  variable: "--font-display",
-  subsets: ["latin"],
-  axes: ["opsz", "SOFT", "WONK"],
-  style: ["normal", "italic"], // Explicit weights omitted to prevent Turbopack axis validation faults
-});
-Custom Tailwind extensions map these directly to standard utilities (font-serif, font-body, font-mono) by referencing standard CSS variable mappings (var(--font-display)).
+This project therefore uses lightweight custom SVG icons located in:
+
+```
+src/components/icons/BrandIcons.tsx
+```
+
+These can easily be replaced with another icon library if desired.
+
+---
+
+## Project Philosophy
+
+Every featured project represents real work.
+
+Rather than including placeholder demos or fabricated links, projects display their actual development status (such as *In Development*, *Academic Submission*, or *Experimental Build*).
+
+Repository links and live demos can be added later by extending the corresponding project entries in `src/data/content.ts`.
+
+---
+
+## License
+
+This project is intended as a personal portfolio and source of inspiration.
+
+Feel free to explore the code and learn from it, but please do not copy the portfolio design or content directly.
