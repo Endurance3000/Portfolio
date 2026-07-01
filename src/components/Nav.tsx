@@ -57,7 +57,7 @@ export default function Nav() {
           data-cursor="lock"
           className="font-mono text-sm font-medium tracking-tight text-ink"
         >
-          S.SHRESTHA <span className="text-graphite-light">/ portfolio.v1</span>
+          S.T.SHRESTHA <span className="text-graphite-light">/ portfolio</span>
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
